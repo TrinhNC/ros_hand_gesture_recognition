@@ -1,0 +1,15 @@
+<launch>
+    <arg name="keypoint_classifier_label" default="$(find ros_hand_gesture_recognition)/src/model/keypoint_classifier/keypoint_classifier_label.csv"/>
+    <arg name="keypoint_classifier_model" default="$(find ros_hand_gesture_recognition)/src/model/keypoint_classifier/keypoint_classifier.tflite"/>
+    <arg name="subscribe_image_topic" default="/image_raw"/>
+    <arg name="publish_gesture_topic" default="/gesture/gesture_name"/>
+    <arg name="show_image" default="True"/>
+
+    <node name="hand_sign_recognition" pkg="ros_hand_gesture_recognition" type="hand_sign_recognition.py" output="screen">
+        <param name="keypoint_classifier_label" type="string" value="$(arg keypoint_classifier_label)" />
+        <param name="keypoint_classifier_model" type="string" value="$(arg keypoint_classifier_model)" />
+        <param name="subscribe_image_topic" type="string" value="$(arg subscribe_image_topic)" />
+        <param name="publish_gesture_topic" type="string" value="$(arg publish_gesture_topic)" />
+        <param name="show_image" type="bool" value="$(arg show_image)" />
+    </node>
+</launch>
