@@ -26,9 +26,14 @@ A ROS package for estimating hand pose using Mediapipe (and Python).
    ```
    $ source ~/catkin_ws/devel/setup.bash
    ```
-2. Launch the hand pose recognition:
+2. Launch the image publisher ([here](https://github.com/TrinhNC/my_cam))
+    ```
+    $ roslaunch my_cam my_cam.launch
+    ```
+3. Launch the hand pose recognition:
    ```
    $ roslaunch ros_hand_gesture_recognition hand_sign.launch
    ```
+<img src="https://user-images.githubusercontent.com/19979949/210186155-c21b0fb2-84ba-430c-94ab-b273f5f36c6c.gif" width="400" height="400" />
 
 # Training new hand gesture
