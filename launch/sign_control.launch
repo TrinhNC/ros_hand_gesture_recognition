@@ -1,6 +1,9 @@
 <launch>
-    <arg name="publish_gesture_topic" default="/gesture/gesture_name"/>
-    <arg name="control_topic" default="/mobile_robot/cmd_vel"/>
+    <include file="$(find my_cam)/launch/my_cam.launch" />
+    <include file="$(find ros_hand_gesture_recognition)/launch/hand_sign.launch" />
+    
+    <arg name="publish_gesture_topic" default="/gesture/hand_sign"/>
+    <arg name="control_topic" default="/robot_diff_drive_controller/cmd_vel"/>
 
     <node name="sign_to_controller" pkg="ros_hand_gesture_recognition" type="sign_to_controller.py" output="screen">
         <param name="publish_gesture_topic" type="string" value="$(arg publish_gesture_topic)" />

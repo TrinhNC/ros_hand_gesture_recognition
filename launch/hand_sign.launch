@@ -2,7 +2,7 @@
     <arg name="keypoint_classifier_label" default="$(find ros_hand_gesture_recognition)/src/model/keypoint_classifier/keypoint_classifier_label.csv"/>
     <arg name="keypoint_classifier_model" default="$(find ros_hand_gesture_recognition)/src/model/keypoint_classifier/keypoint_classifier.tflite"/>
     <arg name="subscribe_image_topic" default="/image_raw"/>
-    <arg name="publish_gesture_topic" default="/gesture/gesture_name"/>
+    <arg name="publish_gesture_topic" default="/gesture/hand_sign"/>
     <arg name="show_image" default="True"/>
 
     <node name="hand_sign_recognition" pkg="ros_hand_gesture_recognition" type="hand_sign_recognition.py" output="screen">
